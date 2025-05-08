@@ -16,35 +16,76 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+# Expo Booking App with Firebase
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+This is a mobile booking app built with **Expo (React Native)**, featuring:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Navigation Bar
+- Banner with a booking form
+- About Section
+- Services Section
+- Contact Section with Firebase-powered form
+- Firebase integration for contact and booking storage
+- Prevention of double bookings based on date/time
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## 🔧 Features
+
+- 📆 Booking form (date, time, and reason)
+- ⚠️ Prevents double bookings via Firebase
+- 📬 Contact form saves messages in Firebase
+- 📲 Built using Expo and App Router (Next.js style)
+- 🔥 Firebase Realtime Database integration
+
+---
+
+## 📁 Folder Structure
+BookingApp/
+├── app/
+│   ├── _layout.tsx          // App router layout
+│   ├── index.tsx            // Home page (includes all sections)
+│   ├── components/
+│   │   ├── Navbar.tsx
+│   │   ├── Banner.tsx
+│   │   ├── About.tsx
+│   │   ├── Services.tsx
+│   │   ├── Contact.tsx
+│   │   └── BookingForm.tsx
+├── firebaseConfig.ts
+├── tsconfig.json
+├── app.json
+
+
+---
+
+##  Dependencies
+
+Install the following libraries:
 
 ```bash
-npm run reset-project
-```
+npx expo install firebase
+npx expo install @react-native-community/datetimepicker
+npx expo install react-native-safe-area-context
+npm install react-native-dotenv
+npm install react-native-screens react-native-gesture-handler
+npm install react-native-calendars @react-native-picker/picker
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-## Learn more
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## DevDependencies
+npm install --save-dev babel-plugin-dotenv-import
 
-## Join the community
+##  firebase setup
 
-Join our community of developers creating universal apps.
+## Booking Functionality
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Contact Form
+--The contact form includes fields like name, email, message.
+--On submission, form data is saved in Firebase.
+
+## Testing
+-- npx expo start
+--npx expo start -c
